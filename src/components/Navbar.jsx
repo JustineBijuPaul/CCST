@@ -73,7 +73,7 @@ const Navbar = () => {
               key={section}
               href={`#${section}`}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-2xl font-medium text-black hover:text-blue-600 transition"
+              className="text-xl font-medium text-black hover:text-blue-600 transition"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
