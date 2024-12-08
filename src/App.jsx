@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Home, Sparkles, Camera, MessageCircle, MapPin } from 'lucide-react';
+import Navbar from './components/Navbar.jsx';
+import Carousel from './components/Carousel.jsx';
 
 const CleaningServicesWebsite = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -11,63 +13,6 @@ const CleaningServicesWebsite = () => {
     serviceType: '',
     details: ''
   });
-
-  const Carousel = () => {
-    const [activeSlide, setActiveSlide] = useState(0);
-    const slides = [
-      "/imgs/img1.webp",
-      "/docs/images/carousel/carousel-2.svg",
-      "/imgs/img2.webpp"
-    ];
-
-    const nextSlide = () => setActiveSlide((prev) => (prev + 1) % slides.length);
-    const prevSlide = () => setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
-
-    return (
-      <div className="relative w-full h-screen">
-        <div className="relative h-screen overflow-hidden rounded-lg md:h-screen">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 h-screen transition-transform duration-700 ease-in-out ${activeSlide === index ? "translate-x-0" : "translate-x-full hidden"
-                }`}
-            >
-              <img
-                src={slide}
-                className="block w-full h-screen object-cover"
-                alt={`Slide ${index + 1}`}
-              />
-            </div>
-          ))}
-        </div>
-        {/* Indicators */}
-        <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full ${activeSlide === index ? "bg-blue-600" : "bg-gray-300"
-                }`}
-              onClick={() => setActiveSlide(index)}
-            ></button>
-          ))}
-        </div>
-        {/* Controls */}
-        <button
-          className="absolute top-0 left-0 z-30 text-white flex items-center justify-center h-full px-4"
-          onClick={prevSlide}
-        >
-          Previous
-        </button>
-        <button
-          className="absolute top-0 right-0 z-30 text-white flex items-center justify-center h-full px-4"
-          onClick={nextSlide}
-        >
-          Next
-        </button>
-      </div>
-    );
-  };
-
 
   const services = [
     {
@@ -117,53 +62,8 @@ const CleaningServicesWebsite = () => {
 
   return (
     <div className="min-h-screen bg-white text-grey-800">
-      {/* Mobile Navigation Toggle */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 bg-blue-900 text-white rounded-md"
-        >
-          {mobileMenuOpen ? 'Close' : 'Menu'}
-        </button>
-      </div>
-
       {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-md z-40">
-        <div className="container mx-auto flex justify-between items-center p-4">
-          <div className="text-2xl font-bold text-blue-600">
-            <img src="/imgs/logo.png" alt="logo" width="60%" />
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6">
-            {['home', 'services', 'about', 'contact'].map(section => (
-              <a
-                key={section}
-                href={`#${section}`}
-                className="hover:text-blue-600 transition transform hover:scale-105"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg">
-              {['home', 'services', 'about', 'contact'].map(section => (
-                <a
-                  key={section}
-                  href={`#${section}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full p-4 text-left hover:bg-blue-50 transition"
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <header id="home" className="relative h-screen overflow-hidden">
