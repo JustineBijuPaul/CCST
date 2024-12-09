@@ -1,26 +1,56 @@
-import React, { useState } from 'react';
-import { Home, Sparkles, Camera, MessageCircle, MapPin } from 'lucide-react';
+import React from 'react';
 import Navbar from './components/Navbar.jsx';
 import Carousel from './components/Carousel.jsx';
 import QuoteRequestForm from './components/QuoteRequestForm.jsx';
 import AboutUs from './components/AboutUs.jsx';
+import Cards from './components/Card.jsx';
 
 const CleaningServicesWebsite = () => {
   const services = [
     {
-      name: 'High Ceiling Cleaning',
-      description: 'Comprehensive spider web and dust removal for hard-to-reach areas',
-      icon: <Sparkles className="w-12 h-12 text-blue-600 group-hover:text-blue-800 transition" />
+      name: 'General Cleaning',
+      description: 'Efficient and routine cleaning to maintain a neat and hygienic space.',
+      icon: <img src='/imgs/janitor.png' width='15%' loading='lazy'/>
     },
     {
-      name: 'Carpet Deep Clean',
+      name: 'Deep Cleaning',
+      description: 'Intensive cleaning targeting hidden dirt and grime for a refreshed environment.',
+      icon: <img src='/imgs/janitorial-service (1).png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'Post-Construction Cleaning',
+      description: 'Specialized cleanup to remove debris, dust, and residues after construction work.',
+      icon: <img src='/imgs/construction.png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'High Ceiling Cleaning',
+      description: 'Comprehensive spider web and dust removal for hard-to-reach areas',
+      icon: <img src='/imgs/people.png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'Carpet Clean',
       description: 'Professional vacuuming and stain removal for pristine carpets',
-      icon: <Camera className="w-12 h-12 text-green-600 group-hover:text-green-800 transition" />
+      icon: <img src='/imgs/carpet-cleaner.png' width='15%' loading='lazy'/>
     },
     {
       name: 'Floor Scrubbing',
       description: 'Thorough cleaning and polishing of all floor types',
-      icon: <MapPin className="w-12 h-12 text-purple-600 group-hover:text-purple-800 transition" />
+      icon: <img src='/imgs/machine.png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'Pressure Washing',
+      description: 'High-powered water cleaning for removing tough stains, dirt, and grime from outdoor surfaces.',
+      icon: <img src='/imgs/pressure-washer.png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'Upholstery Cleaning',
+      description: 'Gentle yet effective cleaning for sofas, chairs, and other furniture.',
+      icon: <img src='/imgs/sofa.png' width='15%' loading='lazy'/>
+    },
+    {
+      name: 'Office Cleaning',
+      description: 'Tailored cleaning services for office spaces, including desks, floors, and common areas.',
+      icon: <img src='imgs/cleaning (1).png' width='15%' loading='lazy'/>
     }
   ];
 
@@ -44,20 +74,23 @@ const CleaningServicesWebsite = () => {
           <p className="text-md md:text-xl mb-8 text-gray-200">
             Professional cleaning services that transform your environment
           </p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition transform hover:scale-105">
+          <a
+            href="#contact"
+            className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition transform hover:scale-105"
+          >
             Get a Quote Now
-          </button>
+          </a>
         </section>
       </header>
 
       {/* Services Section */}
-      <section id="services" className="flex flex-col h-screen justify-center items-center container mx-auto py-16 px-4">
+      <section id="services" className="max-md:hidden flex flex-col h-screen justify-center items-center container mx-auto py-16 px-4">
         <h2 className="text-2xl md:text-3xl text-center mb-12">Our Services</h2>
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
           {services.map(service => (
             <div
               key={service.name}
-              className="text-center p-6 bg-white shadow-md rounded-lg group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="text-center p-6 border-2 border-blue-600 bg-white shadow-md rounded-lg group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               {service.icon}
               <h3 className="text-lg md:text-xl font-semibold mt-4">{service.name}</h3>
@@ -66,6 +99,10 @@ const CleaningServicesWebsite = () => {
           ))}
         </div>
       </section>
+
+      <div id='services-mob' className="md:hidden">
+        <Cards />
+      </div>
 
       <section id='about' className="bg-blue-50 py-16 px-4 h-screen-2">
         <div>
@@ -88,16 +125,15 @@ const CleaningServicesWebsite = () => {
             {/* Center Content */}
             <div className="container mx-auto text-center">
               <div className="mb-6">
-                <div className="text-2xl font-bold mb-2">SparkleClean Services</div>
+                <div className="text-2xl font-bold mb-2">Crystal Cleaning Services Thiruvalla</div>
                 <p className="text-sm md:text-base">Professional Cleaning Solutions</p>
               </div>
               <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-6">
                 <a href="#" className="hover:text-blue-400 transition">Privacy Policy</a>
                 <a href="#" className="hover:text-blue-400 transition">Terms of Service</a>
-                <a href="#" className="hover:text-blue-400 transition">Contact Us</a>
               </div>
               <div className="text-sm">
-                © 2024 SparkleClean. All Rights Reserved.
+                © 2024 CrystalCleaningServicesThiruvalla. All Rights Reserved.
               </div>
             </div>
             {/* Right GIF */}
@@ -109,7 +145,7 @@ const CleaningServicesWebsite = () => {
                 href="https://www.instagram.com/linxcapture?igsh=a25xM2plN2R1cjRt"
                 className="w-32"
               >
-                <img src="/imgs/linxcapture.gif" alt="Linx Capture" />
+                <img src="/imgs/linxcapture.gif" alt="LinXcapture" />
               </a>
               <a
                 href="https://www.instagram.com/saffinvarughese/profilecard/?igsh=MTE4YnJlN3UydzdhZg=="

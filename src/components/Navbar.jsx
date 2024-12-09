@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   // Change navbar background on scroll
   useEffect(() => {
@@ -14,11 +15,17 @@ const Navbar = () => {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
 
     // Cleanup on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -49,16 +56,30 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6 text-xl">
-          {["home", "services", "about", "contact"].map((section) => (
-            <a
-              key={section}
-              href={`#${section}`}
-              className={` transition transform hover:scale-105
-              ${isScrolled ? "hover:text-blue-600" : "hover:text-orange-400"}`}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </a>
-          ))}
+          <a
+            href="#home"
+            className={`transition transform hover:scale-105 ${isScrolled ? "hover:text-blue-600" : "hover:text-orange-400"}`}
+          >
+            Home
+          </a>
+          <a
+            href={isMobile ? "#services-mob" : "#services"}
+            className={`transition transform hover:scale-105 ${isScrolled ? "hover:text-blue-600" : "hover:text-orange-400"}`}
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            className={`transition transform hover:scale-105 ${isScrolled ? "hover:text-blue-600" : "hover:text-orange-400"}`}
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            className={`transition transform hover:scale-105 ${isScrolled ? "hover:text-blue-600" : "hover:text-orange-400"}`}
+          >
+            Contact
+          </a>
         </div>
 
         {/* Mobile Navigation */}
@@ -73,16 +94,34 @@ const Navbar = () => {
             Close
           </button>
 
-          {["home", "services", "about", "contact"].map((section) => (
-            <a
-              key={section}
-              href={`#${section}`}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-xl font-medium text-black hover:text-blue-600 transition"
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </a>
-          ))}
+          <a
+            href="#home"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-xl font-medium text-black hover:text-blue-600 transition"
+          >
+            Home
+          </a>
+          <a
+            href={isMobile ? "#services-mob" : "#services"}
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-xl font-medium text-black hover:text-blue-600 transition"
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-xl font-medium text-black hover:text-blue-600 transition"
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-xl font-medium text-black hover:text-blue-600 transition"
+          >
+            Contact
+          </a>
         </div>
       </div>
     </nav>

@@ -35,6 +35,7 @@ const AboutUs = () => {
                         src="/imgs/aboutus.png"
                         alt="About Us"
                         className="rounded-lg shadow-md w-full max-w-sm"
+                        loading='lazy'
                     />
                 </div>
 
@@ -44,6 +45,7 @@ const AboutUs = () => {
                         src="/imgs/aboutus2.png"
                         alt="Why Choose Us"
                         className="rounded-lg shadow-md w-full max-w-sm"
+                        loading='lazy'
                     />
                 </div>
                 <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 flex flex-col justify-center">

@@ -10,9 +10,15 @@ const QuoteRequestForm = () => {
     });
 
     const services = [
+        'General Cleaning',
+        'Deep Cleaning',
+        'Post-Construction Cleaning',
         'High Ceiling Cleaning',
-        'Carpet Deep Clean',
-        'Floor Scrubbing'
+        'Carpet Clean',
+        'Floor Scrubbing',
+        'Pressure Washing',
+        'Upholstery Cleaning',
+        'Office Cleaning',
     ];
 
     const handleChange = (e) => {
@@ -34,11 +40,11 @@ Phone: ${formData.phone}
 Service Type: ${formData.serviceType}
 Additional Details: ${formData.details || 'No additional details'}`;
 
-        // WhatsApp message (using web.whatsapp.com) //TODO: Replace +1234567890 with your business phone number
-        const whatsappUrl = `https://wa.me/+1234567890?text=${encodeURIComponent(message)}`;
+        // WhatsApp message (using web.whatsapp.com)
+        const whatsappUrl = `https://wa.me/+919746370270?text=${encodeURIComponent(message)}`;
 
-        // Email composition //TODO: Replace your-business-email@example.com with your business email
-        const emailUrl = `mailto:your-business-email@example.com?subject=Quote Request from ${formData.name}&body=${encodeURIComponent(message)}`;
+        // Email composition //TODO: Replace with your company email
+        const emailUrl = `mailto:your-company-email-id@example.com?subject= Quote Request from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(message)}`;
 
         // Open WhatsApp and Email in new tabs
         window.open(whatsappUrl, '_blank');
