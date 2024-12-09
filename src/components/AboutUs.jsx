@@ -4,15 +4,8 @@ const AboutUs = () => {
     return (
         <div className="p-4 sm:p-8">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-                <div className="flex items-center justify-center max-md:hidden">
-                    <img
-                        src="/imgs/aboutus.png"
-                        alt="About Us"
-                        className="rounded-lg shadow-md w-full max-w-sm"
-                    />
-                </div>
                 {/* About Us Section */}
-                <div className="bg-white max-md:hidden shadow-md rounded-lg p-4 sm:p-6 flex flex-col justify-center">
+                <div className="bg-white max-md:hidden shadow-md rounded-lg p-4 sm:p-6 flex flex-col justify-center text-justify">
                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 border-b pb-2 mb-4">About Us</h1>
                     <p className="text-gray-700 mb-4">
                         Welcome to <span className="font-semibold italic">Crystal Cleaning Service</span>, your trusted partner for professional cleaning solutions in Thiruvalla. We specialize in delivering exceptional cleaning services for homes, churches, and auditoriums, focusing on high roof ceilings, floor scrubbing, basic carpet cleaning, and more.
@@ -27,7 +20,7 @@ const AboutUs = () => {
                         Whether it’s a one-time deep clean or regular maintenance, we’re here to make your spaces shine like new. Contact us today for an inspection, and let us take care of the rest!
                     </p>
                 </div>
-                <div className="bg-white md:hidden shadow-md rounded-lg p-4 flex flex-col justify-center">
+                <div className="bg-white md:hidden shadow-md rounded-lg p-4 flex flex-col justify-center text-justify">
                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 border-b pb-2 mb-4">About Us</h1>
                     <p className="text-gray-700 mb-4">
                         Welcome to <span className="font-semibold italic">Crystal Cleaning Service</span>, Thiruvalla’s trusted name for eco-friendly, professional cleaning. We specialize in cleaning high roof ceilings, houses, churches, and auditoriums, offering services like floor scrubbing and carpet cleaning.
