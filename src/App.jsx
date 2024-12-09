@@ -67,7 +67,7 @@ const CleaningServicesWebsite = () => {
         </div>
       </section>
 
-      <section id='about' className="bg-blue-50 py-16 px-4 h-screen">
+      <section id='about' className="bg-blue-50 py-16 px-4 h-screen-2">
         <div>
           <AboutUs />
         </div>

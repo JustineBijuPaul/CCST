@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className="p-4 sm:p-8">
+        <div className="p-4 sm:p-8 justify-center">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
                 {/* About Us Section */}
                 <div className="bg-white max-md:hidden shadow-md rounded-lg p-4 sm:p-6 flex flex-col justify-center text-justify">
