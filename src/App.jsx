@@ -73,7 +73,7 @@ const CleaningServicesWebsite = () => {
         </div>
       </section>
 
-      <section id='contact' className='h-screen'>
+      <section id='contact'>
         {/* Quote Request Form */}
         <QuoteRequestForm />
 
