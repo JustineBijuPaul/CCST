@@ -58,7 +58,7 @@ Additional Details: ${formData.details || 'No additional details'}`;
     };
 
     return (
-        <section className="container mx-auto py-16 px-4">
+        <section className="container mx-auto py-36 px-4">
             <h2 className="text-2xl md:text-3xl text-center mb-12">Request a Quote</h2>
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
                 <div className="grid md:grid-cols-2 gap-4">

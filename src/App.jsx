@@ -3,6 +3,8 @@ import { Home, Sparkles, Camera, MessageCircle, MapPin } from 'lucide-react';
 import Navbar from './components/Navbar.jsx';
 import Carousel from './components/Carousel.jsx';
 import QuoteRequestForm from './components/QuoteRequestForm.jsx';
+import AboutUs from './components/AboutUs.jsx';
+
 const CleaningServicesWebsite = () => {
   const services = [
     {
@@ -65,58 +67,60 @@ const CleaningServicesWebsite = () => {
         </div>
       </section>
 
-      <section id='about' className="bg-blue-50 py-16 px-4">
+      <section id='about' className="bg-blue-50 py-16 px-4 h-screen">
         <div>
-          <p>About Us</p>
+          <AboutUs />
         </div>
       </section>
 
-      {/* Quote Request Form */}
-      <QuoteRequestForm />
+      <section id='contact' className='h-screen'>
+        {/* Quote Request Form */}
+        <QuoteRequestForm />
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12 px-4">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-12">
-          {/* Left GIF */}
-          <a href="https://www.instagram.com/linxcapture?igsh=a25xM2plN2R1cjRt" className="w-40 md:w-56 max-md:hidden">
-            <img src="/imgs/linxcapture.gif" alt="LinXcapture" className="mx-auto md:mx-0" />
-          </a>
+        {/* Footer */}
+        <footer className="bg-gray-800 text-white py-12 px-4">
+          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-12">
+            {/* Left GIF */}
+            <a href="https://www.instagram.com/linxcapture?igsh=a25xM2plN2R1cjRt" className="w-40 md:w-56 max-md:hidden">
+              <img src="/imgs/linxcapture.gif" alt="LinXcapture" className="mx-auto md:mx-0" />
+            </a>
 
-          {/* Center Content */}
-          <div className="container mx-auto text-center">
-            <div className="mb-6">
-              <div className="text-2xl font-bold mb-2">SparkleClean Services</div>
-              <p className="text-sm md:text-base">Professional Cleaning Solutions</p>
+            {/* Center Content */}
+            <div className="container mx-auto text-center">
+              <div className="mb-6">
+                <div className="text-2xl font-bold mb-2">SparkleClean Services</div>
+                <p className="text-sm md:text-base">Professional Cleaning Solutions</p>
+              </div>
+              <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-6">
+                <a href="#" className="hover:text-blue-400 transition">Privacy Policy</a>
+                <a href="#" className="hover:text-blue-400 transition">Terms of Service</a>
+                <a href="#" className="hover:text-blue-400 transition">Contact Us</a>
+              </div>
+              <div className="text-sm">
+                © 2024 SparkleClean. All Rights Reserved.
+              </div>
             </div>
-            <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-6">
-              <a href="#" className="hover:text-blue-400 transition">Privacy Policy</a>
-              <a href="#" className="hover:text-blue-400 transition">Terms of Service</a>
-              <a href="#" className="hover:text-blue-400 transition">Contact Us</a>
-            </div>
-            <div className="text-sm">
-              © 2024 SparkleClean. All Rights Reserved.
+            {/* Right GIF */}
+            <a href="https://www.instagram.com/saffinvarughese/profilecard/?igsh=MTE4YnJlN3UydzdhZg==" className="w-40 md:w-56 max-md:hidden">
+              <img src="/imgs/amozrich.gif" alt="AmozRich" className="mx-auto md:mx-0" />
+            </a>
+            <div className="hidden md:hidden max-md:flex justify-between items-center mt-6">
+              <a
+                href="https://www.instagram.com/linxcapture?igsh=a25xM2plN2R1cjRt"
+                className="w-32"
+              >
+                <img src="/imgs/linxcapture.gif" alt="Linx Capture" />
+              </a>
+              <a
+                href="https://www.instagram.com/saffinvarughese/profilecard/?igsh=MTE4YnJlN3UydzdhZg=="
+                className="w-32"
+              >
+                <img src="/imgs/amozrich.gif" alt="Amoz Rich" />
+              </a>
             </div>
           </div>
-          {/* Right GIF */}
-          <a href="https://www.instagram.com/saffinvarughese/profilecard/?igsh=MTE4YnJlN3UydzdhZg==" className="w-40 md:w-56 max-md:hidden">
-            <img src="/imgs/amozrich.gif" alt="AmozRich" className="mx-auto md:mx-0" />
-          </a>
-          <div className="hidden md:hidden max-md:flex justify-between items-center mt-6">
-            <a
-              href="https://www.instagram.com/linxcapture?igsh=a25xM2plN2R1cjRt"
-              className="w-32"
-            >
-              <img src="/imgs/linxcapture.gif" alt="Linx Capture" />
-            </a>
-            <a
-              href="https://www.instagram.com/saffinvarughese/profilecard/?igsh=MTE4YnJlN3UydzdhZg=="
-              className="w-32"
-            >
-              <img src="/imgs/amozrich.gif" alt="Amoz Rich" />
-            </a>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </section>
 
     </div>
   );
